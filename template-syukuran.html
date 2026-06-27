@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Syukuran - [Nama]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #bf9b30;
+            --gold-light: #f0e4c0;
+            --brown-dark: #3e2723;
+            --brown-mid: #5d4037;
+            --brown-light: #8d6e63;
+            --cream: #fefaf2;
+            --white: #ffffff;
+            --text: #4a3525;
+            --shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .ornament-top, .ornament-bottom { text-align: center; padding: 24px 16px; overflow: hidden; }
+        .ornament-top svg, .ornament-bottom svg { width: 280px; max-width: 85%; height: auto; opacity: 0.85; }
+        .card { max-width: 520px; margin: 0 auto 40px; background: var(--white); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; position: relative; border: 1px solid rgba(191,155,48,0.2); }
+        .card-header { background: linear-gradient(160deg, #3e2723 0%, #5d4037 50%, #795548 100%); padding: 40px 24px 32px; text-align: center; position: relative; }
+        .card-header::after { content: ''; position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 26px solid transparent; border-right: 26px solid transparent; border-top: 18px solid #5d4037; }
+        .bismillah { font-family: 'Amiri', serif; font-size: 28px; color: var(--gold-light); margin-bottom: 16px; letter-spacing: 1px; }
+        .card-header .label { font-family: 'Cormorant Garamond', serif; font-size: 13px; text-transform: uppercase; letter-spacing: 5px; color: var(--gold-light); opacity: 0.9; }
+        .card-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); font-weight: 300; margin: 8px 0 4px; letter-spacing: 1px; }
+        .card-body { padding: 44px 28px 32px; text-align: center; }
+        .guest-name { font-size: 20px; color: var(--gold); text-align: center; margin: -14px 0 20px; font-weight: 600; letter-spacing: 1px; }
+        .name-frame { display: inline-block; border: 2px solid var(--gold); border-radius: 12px; padding: 24px 32px; margin: 0 auto 20px; position: relative; }
+        .name-frame::before { content: '✦'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); color: var(--gold); font-size: 16px; background: var(--white); padding: 0 8px; }
+        .main-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--brown-dark); line-height: 1.4; letter-spacing: 1px; }
+        .acara-label { display: inline-block; background: linear-gradient(135deg, var(--brown-dark), var(--brown-mid)); color: var(--gold-light); padding: 6px 20px; border-radius: 20px; font-size: 13px; letter-spacing: 3px; margin: 8px 0 4px; text-transform: uppercase; }
+        .host { font-size: 17px; color: var(--text); margin: 16px 0 6px; line-height: 2; }
+        .host strong { color: var(--brown-dark); }
+        .photo-frame { margin: 12px auto 0; width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid var(--gold); box-shadow: 0 4px 16px rgba(191,155,48,0.35); background: #f5efe0; }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .geo-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 24px 0 20px; }
+        .geo-divider .line { flex:1; height:1px; background:var(--gold); max-width:80px; }
+        .geo-divider .diamond { width:10px; height:10px; background:var(--gold); transform:rotate(45deg); border-radius:1px; }
+        .event-box { background: linear-gradient(135deg, rgba(62,39,35,0.03), rgba(191,155,48,0.06)); border: 1px solid rgba(191,155,48,0.25); border-radius: 14px; padding: 24px 20px; margin: 0 0 24px; }
+        .event-box .row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; text-align: left; }
+        .event-box .row:last-child { margin-bottom: 0; }
+        .event-icon { font-size: 28px; flex-shrink: 0; width: 40px; text-align: center; }
+        .event-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 2px; }
+        .event-value { font-size: 18px; font-weight: 600; color: var(--brown-dark); }
+        .event-value small { font-weight: 400; font-size: 14px; color: #8a7a6a; display: block; }
+        .countdown-box { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 12px 0 20px; }
+        .cd-item { text-align: center; min-width: 55px; }
+        .cd-num { font-size: 32px; font-weight: 700; color: var(--brown-dark); line-height: 1; }
+        .cd-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-top: 4px; }
+        .btn-rsvp { display: inline-block; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; padding: 14px 32px; border-radius: 30px; font-size: 16px; font-weight: 600; letter-spacing: 1px; margin: 8px 0 24px; box-shadow: 0 4px 16px rgba(37,211,102,0.3); transition: all 0.3s; }
+        .btn-rsvp:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,0.4); }
+        .doa-box { background: var(--cream); border-radius: 12px; padding: 24px 20px; margin: 0 0 16px; text-align: center; border: 1px solid rgba(191,155,48,0.15); }
+        .doa-arab { font-family: 'Amiri', serif; font-size: 24px; color: var(--brown-dark); line-height: 2; margin-bottom: 12px; direction: rtl; }
+        .doa-latin { font-size: 14px; font-style: italic; color: #6b5a4a; margin-bottom: 8px; }
+        .doa-arti { font-size: 13px; color: #8a7a6a; }
+        .maps-box { margin: 8px 0 4px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(191,155,48,0.25); position: relative; cursor: pointer; }
+        .maps-box iframe { width: 100%; height: 220px; border: 0; pointer-events: none; }
+        .maps-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; display: block; }
+        .maps-overlay:hover { background: rgba(0,0,0,0.08); }
+        .maps-badge { position: absolute; bottom: 10px; right: 10px; background: #1a73e8; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; z-index: 3; pointer-events: none; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .alamat-text { font-size: 14px; color: #6b5a4a; margin-top: 8px; line-height: 1.6; }
+        .card-footer { background: linear-gradient(160deg, #3e2723, #5d4037); padding: 20px; text-align: center; }
+        .card-footer p { color: var(--gold-light); font-size: 14px; opacity: 0.9; line-height: 1.8; }
+        .card-footer .closing { font-family: 'Amiri', serif; font-size: 18px; margin-top: 4px; }
+        @media (max-width: 480px) {
+            .card { border-radius: 14px; }
+            .card-header { padding: 28px 16px 24px; }
+            .bismillah { font-size: 24px; }
+            .card-body { padding: 36px 18px 24px; }
+            .main-name { font-size: 26px; }
+            .event-value { font-size: 16px; }
+            .cd-num { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ornament-top">
+        <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3e2723;stop-opacity:0.06"/><stop offset="30%" style="stop-color:#bf9b30;stop-opacity:0.5"/><stop offset="50%" style="stop-color:#bf9b30;stop-opacity:0.8"/><stop offset="70%" style="stop-color:#bf9b30;stop-opacity:0.5"/><stop offset="100%" style="stop-color:#3e2723;stop-opacity:0.06"/></linearGradient></defs>
+            <polygon points="200,6 206,20 220,20 208,28 212,42 200,34 188,42 192,28 180,20 194,20" fill="#bf9b30" opacity="0.65"/>
+            <line x1="60" y1="30" x2="160" y2="30" stroke="url(#gg)" stroke-width="1.5"/>
+            <line x1="240" y1="30" x2="340" y2="30" stroke="url(#gg)" stroke-width="1.5"/>
+            <rect x="170" y="27" width="6" height="6" fill="#bf9b30" opacity="0.5" transform="rotate(45,173,30)"/>
+            <rect x="224" y="27" width="6" height="6" fill="#bf9b30" opacity="0.5" transform="rotate(45,227,30)"/>
+        </svg>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْمِ</div>
+            <div class="label">Syukuran</div>
+            <h1>Mohon Doa &amp; Restu</h1>
+        </div>
+        <div class="card-body">
+            <div class="guest-name" id="guest-name">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+            <div class="name-frame">
+                <div class="main-name">[Nama Acara]</div>
+            </div>
+            <div class="acara-label">✦ [Jenis Syukuran] ✦</div>
+            <div class="host">
+                Diselenggarakan oleh
+                <br><strong>[Nama Tuan Rumah]</strong>
+            </div>
+            <div class="photo-frame">
+                <img src="foto-syukuran.jpg" alt="Syukuran">
+            </div>
+            <div class="geo-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+            <div class="event-box">
+                <div class="row">
+                    <div class="event-icon">📅</div><div><div class="event-label">Hari &amp; Tanggal</div><div class="event-value">[Hari], [Tanggal]</div></div>
+                </div>
+                <div class="row">
+                    <div class="event-icon">🕖</div><div><div class="event-label">Waktu</div><div class="event-value">[Jam] WIB</div><small>(Silakan hadir sesuai waktu yang berkenan)</small></div>
+                </div>
+                <div class="row">
+                    <div class="event-icon">📍</div><div><div class="event-label">Lokasi</div><div class="event-value">[Nama Tempat]</div><small>[Alamat Lengkap]</small></div>
+                </div>
+            </div>
+            <div class="countdown-box" id="countdown">
+                <div class="cd-item"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Hari</div></div>
+                <div class="cd-item"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Jam</div></div>
+                <div class="cd-item"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Menit</div></div>
+                <div class="cd-item"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Detik</div></div>
+            </div>
+            <a class="btn-rsvp" href="https://wa.me/62xxxxxxxx?text=Assalamu'alaikum%2C%20insyaAllah%20kami%20hadir" target="_blank" rel="noopener">💬 Konfirmasi Kehadiran via WhatsApp</a>
+            <div class="doa-box">
+                <div class="doa-arab">اَللَّهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ</div>
+                <div class="doa-latin"><em>"Allahumma baarik lanaa fiimaa razaqtanaa wa qinaa 'adzaaban naar"</em></div>
+                <div class="doa-arti">"Ya Allah, berkahilah apa yang Engkau rezekikan kepada kami dan peliharalah kami dari siksa api neraka."</div>
+            </div>
+            <div class="maps-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967!2d106.03609!3d-6.054767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDMnMTcuMiJTIDEwNsKwMDInMTAuMCJF!5e0!3m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Acara"></iframe>
+                <a class="maps-overlay" href="https://maps.app.goo.gl/[shortlink]" target="_blank" rel="noopener">&nbsp;</a>
+                <span class="maps-badge">📍 Buka Google Maps</span>
+            </div>
+            <div class="alamat-text">
+                <a href="https://maps.app.goo.gl/[shortlink]" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                    📍 [Alamat Lengkap]<br>
+                    <span style="font-size: 0.8em; opacity: 0.7;">👆 Klik untuk buka Google Maps + navigasi langsung</span>
+                </a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <p>Merupakan suatu kehormatan dan kebahagiaan<br>apabila Bapak/Ibu/Saudara/i berkenan hadir<br>memberikan doa restu.</p>
+            <p class="closing">جَزَاكُمُ اللَّهُ خَيْرًا كَثِيْرًا<br><small>Jazakumullah khairan katsira</small></p>
+        </div>
+    </div>
+
+    <div class="ornament-bottom">
+        <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gg2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3e2723;stop-opacity:0.06"/><stop offset="30%" style="stop-color:#bf9b30;stop-opacity:0.4"/><stop offset="50%" style="stop-color:#bf9b30;stop-opacity:0.7"/><stop offset="70%" style="stop-color:#bf9b30;stop-opacity:0.4"/><stop offset="100%" style="stop-color:#3e2723;stop-opacity:0.06"/></linearGradient></defs>
+            <line x1="80" y1="30" x2="160" y2="30" stroke="url(#gg2)" stroke-width="1.2"/>
+            <line x1="240" y1="30" x2="320" y2="30" stroke="url(#gg2)" stroke-width="1.2"/>
+            <ellipse cx="200" cy="30" rx="22" ry="12" fill="none" stroke="#bf9b30" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="200" cy="30" r="3" fill="#bf9b30" opacity="0.6"/>
+        </svg>
+        <p style="text-align:center;font-size:12px;color:#b5a08a;margin-top:8px;">&copy; 2026 — [Nama Tuan Rumah]</p>
+    </div>
+
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const guest = params.get('to');
+            if (guest) {
+                document.getElementById('guest-name').innerText = 'Kepada Yth. ' + guest;
+            }
+        })();
+        (function() {
+            const target = new Date('[YYYY-MM-DD]T[HH]:[MM]:00+07:00');
+            const cdDays = document.getElementById('cd-days');
+            const cdHours = document.getElementById('cd-hours');
+            const cdMins = document.getElementById('cd-mins');
+            const cdSecs = document.getElementById('cd-secs');
+            function update() {
+                const diff = target - new Date();
+                if (diff <= 0) { cdDays.textContent='0'; cdHours.textContent='0'; cdMins.textContent='0'; cdSecs.textContent='0'; return; }
+                cdDays.textContent = Math.floor(diff / 86400000);
+                cdHours.textContent = Math.floor((diff / 3600000) % 24);
+                cdMins.textContent = Math.floor((diff / 60000) % 60);
+                cdSecs.textContent = Math.floor((diff / 1000) % 60);
+            }
+            update(); setInterval(update, 1000);
+        })();
+    </script>
+</body>
+</html>
